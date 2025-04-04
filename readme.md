@@ -48,7 +48,7 @@ A sleek, responsive portfolio website featuring modern UI effects, smooth animat
 
 ## 📱 Demo
 
-Visit the live site: [https://your-portfolio-url.com](https://your-portfolio-url.com)
+Visit the live site: [https://carneirou.github.io/Portfolio/](https://carneirou.github.io/Portfolio/)
 
 ## 🎨 Customization
 
