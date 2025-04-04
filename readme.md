@@ -2,7 +2,7 @@
 
 A sleek, responsive portfolio website featuring modern UI effects, smooth animations, and a clean design.
 
-![Portfolio Preview](file:///C:/Users/Icoac/Pictures/Capture.PNG)
+![Portfolio Preview](Preview.jpg)
 
 ##  Features
 
