@@ -2,7 +2,7 @@
 
 A sleek, responsive portfolio website featuring modern UI effects, smooth animations, and a clean design.
 
-![Portfolio Preview](Preview.jpg)
+![Image](https://github.com/user-attachments/assets/f92aa9d2-75d7-42fd-976e-2ff962d96c8c)
 
 ##  Features
 
