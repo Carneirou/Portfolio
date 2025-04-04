@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio Encantado</title>
+  <style>
+    :root {
+      --green-dark: #0a2e1f;
+      --green-medium: #1a5e40;
+      --green-light: #2ecc71;
+      --white: #f5f5f5;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    body {
+      background-color: #121212;
+      color: var(--white);
+      overflow-x: hidden;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    header {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      z-index: 100;
+      background: rgba(10, 46, 31, 0.8);
+      backdrop-filter: blur(10px);
+    }
+    
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      background: linear-gradient(90deg, var(--green-light), var(--white));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: pulse 2s infinite;
+    }
+    
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+    
+    nav ul li {
+      margin: 0 15px;
+    }
+    
+    nav ul li a {
+      color: var(--white);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    nav ul li a:hover {
+      color: var(--green-light);
+    }
+    
+    .hero {
+      text-align: center;
+      z-index: 1;
+    }
+    
+    .hero h1 {
+      font-size: 4rem;
+      margin-bottom: 20px;
+      background: linear-gradient(90deg, var(--green-light), var(--white));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .hero p {
+      font-size: 1.5rem;
+      margin-bottom: 30px;
+      opacity: 0.9;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 12px 30px;
+      background: linear-gradient(45deg, var(--green-medium), var(--green-light));
+      color: var(--white);
+      border: none;
+      border-radius: 50px;
+      font-size: 1rem;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .btn:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(46, 204, 113, 0.3);
+    }
+    
+    .enchanted-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+    
+    .circle {
+      position: absolute;
+      border-radius: 50%;
+      background: linear-gradient(45deg, var(--green-dark), var(--green-light));
+      opacity: 0.15;
+      filter: blur(60px);
+      animation: float 10s infinite alternate;
+    }
+    
+    .circle:nth-child(1) {
+      width: 400px;
+      height: 400px;
+      top: -100px;
+      left: -100px;
+      animation-delay: 0s;
+    }
+    
+    .circle:nth-child(2) {
+      width: 300px;
+      height: 300px;
+      bottom: -50px;
+      right: -50px;
+      animation-delay: 2s;
+    }
+    
+    .circle:nth-child(3) {
+      width: 200px;
+      height: 200px;
+      top: 40%;
+      left: 30%;
+      animation-delay: 1s;
+    }
+    
+    .portfolio {
+      padding: 100px 0;
+    }
+    
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 50px;
+      text-align: center;
+      background: linear-gradient(90deg, var(--green-light), var(--white));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    
+    .project-card {
+      background: linear-gradient(145deg, rgba(26, 94, 64, 0.1), rgba(10, 46, 31, 0.4));
+      border-radius: 20px;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(46, 204, 113, 0.1);
+    }
+    
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(46, 204, 113, 0.2);
+    }
+    
+    .project-img {
+      height: 200px;
+      width: 100%;
+      background: linear-gradient(45deg, var(--green-dark), var(--green-medium));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      color: var(--white);
+      opacity: 0.8;
+    }
+    
+    .project-content {
+      padding: 20px;
+    }
+    
+    .project-content h3 {
+      margin-bottom: 10px;
+      color: var(--green-light);
+    }
+    
+    .project-content p {
+      margin-bottom: 20px;
+      opacity: 0.8;
+      font-size: 0.9rem;
+    }
+    
+    .language-tag {
+      display: inline-block;
+      padding: 5px 12px;
+      background: rgba(46, 204, 113, 0.2);
+      border-radius: 20px;
+      margin-right: 8px;
+      margin-bottom: 8px;
+      font-size: 0.8rem;
+      color: var(--green-light);
+      border: 1px solid rgba(46, 204, 113, 0.3);
+      transition: transform 0.2s, background 0.2s;
+    }
+    
+    .language-tag:hover {
+      transform: scale(1.05);
+      background: rgba(46, 204, 113, 0.3);
+    }
+    
+    .contact {
+      padding: 100px 0;
+      text-align: center;
+    }
+    
+    .social-links {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    
+    .social-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: linear-gradient(45deg, var(--green-medium), var(--green-light));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 1.5rem;
+      transition: transform 0.3s;
+      text-decoration: none;
+    }
+    
+    .social-icon:hover {
+      transform: scale(1.2);
+    }
+    
+    footer {
+      padding: 30px 0;
+      text-align: center;
+      background: var(--green-dark);
+      opacity: 0.9;
+    }
+    
+    /* Animations */
+    @keyframes pulse {
+      0% {
+        opacity: 0.8;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0.8;
+      }
+    }
+    
+    @keyframes float {
+      0% {
+        transform: translateY(0) scale(1);
+      }
+      100% {
+        transform: translateY(-20px) scale(1.05);
+      }
+    }
+    
+    /* Floating particles */
+    .particles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 0;
+    }
+    
+    .particle {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      background-color: var(--green-light);
+      border-radius: 50%;
+      opacity: 0;
+      animation: rise 15s infinite linear;
+    }
+    
+    /* Code decorations */
+    .code-decoration {
+      font-family: monospace;
+      font-size: 0.8rem;
+      color: var(--green-light);
+      opacity: 0.7;
+      margin-top: 15px;
+      text-align: left;
+      overflow: hidden;
+      max-height: 60px;
+    }
+    
+    .code-line {
+      white-space: nowrap;
+      line-height: 1.4;
+    }
+    
+    /* Icon styles */
+    .social-icon svg {
+      width: 24px;
+      height: 24px;
+      fill: var(--white);
+    }
+    
+    @keyframes rise {
+      0% {
+        transform: translateY(100vh) scale(0);
+        opacity: 0;
+      }
+      50% {
+        opacity: 0.5;
+      }
+      100% {
+        transform: translateY(-100px) scale(1);
+        opacity: 0;
+      }
+    }
+    
+    /* Media queries */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .hero p {
+        font-size: 1.2rem;
+      }
+      
+      nav ul {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">PortfólioVerde</div>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#portfolio">Portfólio</a></li>
+      <li><a href="#contact">Contato</a></li>
+    </ul>
+  </nav>
+
+  <header id="home">
+    <div class="enchanted-bg">
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="particles" id="particles"></div>
+    </div>
+    <div class="container hero">
+      <h1>Bem-vindo ao Meu Mundo</h1>
+      <p>Designer & Desenvolvedor Criativo</p>
+      <a href="#portfolio" class="btn">Ver Trabalhos</a>
+    </div>
+  </header>
+
+  <section id="portfolio" class="portfolio">
+    <div class="container">
+      <h2 class="section-title">Meus Projetos</h2>
+      <div class="projects">
+        <div class="project-card">
+          <div class="project-img">01</div>
+          <div class="project-content">
+            <h3>Design Web</h3>
+            <p>Criação de sites responsivos e modernos utilizando as mais recentes tecnologias do mercado.</p>
+            <div>
+              <span class="language-tag">HTML5</span>
+              <span class="language-tag">CSS3</span>
+              <span class="language-tag">JavaScript</span>
+            </div>
+            <div class="code-decoration">
+              <div class="code-line">&lt;div class="container"&gt;</div>
+              <div class="code-line">  const app = document.querySelector('#app');</div>
+              <div class="code-line">  &lt;header&gt;Bem-vindo&lt;/header&gt;</div>
+            </div>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-img">02</div>
+          <div class="project-content">
+            <h3>App Mobile</h3>
+            <p>Desenvolvimento de aplicativos nativos e híbridos para iOS e Android com foco em experiência do usuário.</p>
+            <div>
+              <span class="language-tag">React Native</span>
+              <span class="language-tag">Swift</span>
+              <span class="language-tag">Kotlin</span>
+            </div>
+            <div class="code-decoration">
+              <div class="code-line">import React from 'react';</div>
+              <div class="code-line">function App() {</div>
+              <div class="code-line">  return &lt;View style={styles.container}&gt;</div>
+            </div>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-img">03</div>
+          <div class="project-content">
+            <h3>UI/UX Design</h3>
+            <p>Criação de interfaces intuitivas e atraentes que proporcionam a melhor experiência para o usuário.</p>
+            <div>
+              <span class="language-tag">Figma</span>
+              <span class="language-tag">Adobe XD</span>
+              <span class="language-tag">Sketch</span>
+            </div>
+            <div class="code-decoration">
+              <div class="code-line">$primary-color: #2ecc71;</div>
+              <div class="code-line">.container {</div>
+              <div class="code-line">  display: flex; justify-content: center;</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2 class="section-title">Entre em Contato</h2>
+      <p>Vamos trabalhar juntos no seu próximo projeto?</p>
+      <div class="social-links">
+        <a href="#" class="social-icon" title="GitHub">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+          </svg>
+        </a>
+        <a href="#" class="social-icon" title="Discord">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3847-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189z"/>
+          </svg>
+        </a>
+        <a href="#" class="social-icon" title="Instagram">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 PortfólioVerde. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Create particles
+    const particlesContainer = document.getElementById('particles');
+    const particleCount = 20;
+    
+    for (let i = 0; i < particleCount; i++) {
+      const particle = document.createElement('div');
+      particle.classList.add('particle');
+      
+      // Random positioning
+      particle.style.left = `${Math.random() * 100}%`;
+      particle.style.animationDelay = `${Math.random() * 15}s`;
+      particle.style.opacity = Math.random() * 0.5;
+      
+      particlesContainer.appendChild(particle);
+    }
+    
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+</html>
