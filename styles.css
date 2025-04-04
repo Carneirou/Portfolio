@@ -256,53 +256,30 @@ body {
 
 .about-image {
   position: relative;
-}
-
-.about-image::before {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.1), transparent);
-  z-index: -1;
-  filter: blur(20px);
+  overflow: hidden;
+  border-radius: 10px;
 }
 
 .about-image img {
   width: 100%;
   border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   transition: all 0.5s ease;
-  position: relative;
-  z-index: 2;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
-.about-image::after {
-  content: "";
+.about-image::before {
+  content: '';
   position: absolute;
-  width: calc(100% + 20px);
-  height: calc(100% + 20px);
-  border: 2px solid var(--white);
-  border-radius: 15px;
-  top: -10px;
-  left: -10px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(255,255,255,0.15) 0%, transparent 70%);
   z-index: 1;
-  animation: pulse 3s infinite alternate;
-}
-
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-  }
-  100% {
-    box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
-  }
 }
 
 .about-image:hover img {
-  transform: scale(1.03);
+  transform: scale(1.05);
 }
 
 .about-text h2 {
@@ -326,6 +303,7 @@ body {
 .about-text p {
   margin-bottom: 20px;
   font-size: 16px;
+  line-height: 1.7;
 }
 
 .about-stats {
@@ -342,8 +320,6 @@ body {
   border-radius: 8px;
   border-left: 3px solid var(--white);
   transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
 }
 
 .stat-item:hover {
