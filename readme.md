@@ -2,9 +2,9 @@
 
 A sleek, responsive portfolio website featuring modern UI effects, smooth animations, and a clean design.
 
-![Portfolio Preview](https://your-image-url-here.jpg)
+![Portfolio Preview](file:///C:/Users/Icoac/Pictures/Capture.PNG)
 
-## 🚀 Features
+##  Features
 
 - **Responsive Design**: Looks great on all devices from mobile to desktop
 - **Modern UI**: Animated transitions, hover effects, and smooth scrolling
@@ -12,20 +12,20 @@ A sleek, responsive portfolio website featuring modern UI effects, smooth animat
 - **Optimized Performance**: Lightweight and fast-loading
 - **Clean Code**: Well-structured HTML, CSS, and JavaScript
 
-## 📋 Sections
+##  Sections
 
 - **Home**: Engaging hero section with animated introduction
 - **About**: Professional bio with stats and a profile image
 - **Skills**: Interactive skill cards with visual representation of proficiency levels
 
-## 🛠️ Technologies Used
+##  Technologies Used
 
 - HTML5
 - CSS3 (Custom variables, Flexbox, Grid, Animations)
 - Vanilla JavaScript
 - Font Awesome Icons
 
-## 🔧 Installation & Setup
+##  Installation & Setup
 
 1. Clone the repository:
    ```bash
@@ -46,11 +46,11 @@ A sleek, responsive portfolio website featuring modern UI effects, smooth animat
    # Right-click on index.html and select "Open with Live Server"
    ```
 
-## 📱 Demo
+##  Demo
 
 Visit the live site: [https://carneirou.github.io/Portfolio/](https://carneirou.github.io/Portfolio/)
 
-## 🎨 Customization
+##  Customization
 
 This portfolio template is designed to be easily customizable:
 
@@ -60,7 +60,7 @@ This portfolio template is designed to be easily customizable:
 4. **Social Links**: Update the links in the header and footer sections
 5. **Skills**: Adjust the skill cards and progress bars to match your expertise
 
-## 📋 Project Structure
+##  Project Structure
 
 ```
 portfolio-website/
@@ -71,7 +71,7 @@ portfolio-website/
 └── README.md           # Project documentation
 ```
 
-## 🧩 Future Enhancements
+##  Future Enhancements
 
 - [ ] Add a Projects/Work section with portfolio items
 - [ ] Implement a contact form with validation
@@ -83,7 +83,7 @@ portfolio-website/
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🤝 Connect With Me
+##  Connect With Me
 
 - Discord: [Join my server](https://discord.gg/Eh52WbJAZ7)
 - GitHub: [@Carneirou](https://github.com/Carneirou)
