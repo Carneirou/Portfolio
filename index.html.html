@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Floating Shapes -->
+  <div class="floating-shapes">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <a href="#" class="logo">Portfolio</a>
+    <ul class="nav-links">
+      <li><a href="#home" class="nav-link active" data-section="home">Home</a></li>
+      <li><a href="#about" class="nav-link" data-section="about">Sobre</a></li>
+      <li><a href="#skills" class="nav-link" data-section="skills">Competências</a></li>
+    </ul>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-discord"></i></a>
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Home Section -->
+    <section id="home" class="section">
+      <div class="section-content">
+        <div class="hero-content">
+          <h1 class="hero-title">Olá, eu sou <span>Ico</span></h1>
+          <p class="hero-subtitle">Web Developer | Designer UI/UX | Surfista</p>
+          <div class="hero-buttons">
+            <a href="#about" class="btn btn-primary">Sobre Mim</a>
+            <a href="#skills" class="btn btn-outline">Competências</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+      <div class="section-content">
+        <div class="about-content">
+          <div class="about-text">
+            <h2>Sobre Mim</h2>
+            <p>Olá! Sou um desenvolvedor web com paixão por criar experiências digitais bonitas e funcionais. Com mais de 5 anos de experiência na indústria, especializo-me em desenvolvimento front-end e design de UI.</p>
+            <p>Tenho formação em Ciências e estou sempre a tentar aprender novas técnicas para melhorar o meu trabalho. Quando não estou a programar, gosto de praticar desportos como surf ou explorar novos lugares.</p>
+            <div class="about-stats">
+              <div class="stat-item">
+                <div class="stat-number">5+</div>
+                <div class="stat-title">Anos de Experiência</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">50+</div>
+                <div class="stat-title">Projetos Completos</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">20+</div>
+                <div class="stat-title">Clientes Satisfeitos</div>
+              </div>
+            </div>
+          </div>
+          <div class="about-image">
+            <img src="/api/placeholder/500/500" alt="Minha Foto">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+      <div class="section-content">
+        <h2 class="section-title">Minhas Competências</h2>
+        <div class="skills-container">
+          <div class="skill-card">
+            <h3>Desenvolvimento Front-end</h3>
+            <p>HTML / CSS / JavaScript / React</p>
+            <div class="skill-progress">
+              <div class="progress-bar" style="width: 90%;"></div>
+            </div>
+          </div>
+          <div class="skill-card">
+            <h3>Design UI/UX</h3>
+            <p>Figma / Adobe XD / Sketch</p>
+            <div class="skill-progress">
+              <div class="progress-bar" style="width: 85%;"></div>
+            </div>
+          </div>
+          <div class="skill-card">
+            <h3>Desenvolvimento Backend</h3>
+            <p>Node.js / Express / MongoDB</p>
+            <div class="skill-progress">
+              <div class="progress-bar" style="width: 75%;"></div>
+            </div>
+          </div>
+          <div class="skill-card">
+            <h3>DevOps</h3>
+            <p>Docker / Git / CI/CD</p>
+            <div class="skill-progress">
+              <div class="progress-bar" style="width: 65%;"></div>
+            </div>
+          </div>
+          <div class="skill-card">
+            <h3>Desenvolvimento Mobile</h3>
+            <p>React Native / Flutter</p>
+            <div class="skill-progress">
+              <div class="progress-bar" style="width: 70%;"></div>
+            </div>
+          </div>
+          <div class="skill-card">
+            <h3>Serviços Cloud</h3>
+            <p>AWS / Firebase</p>
+            <div class="skill-progress">
+              <div class="progress-bar" style="width: 60%;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
